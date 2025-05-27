@@ -51,8 +51,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/nightstalker117/cis-scanner.git
-cd cis-scanner
+https://github.com/nightstalker117/CIS_ScanCan.git
+cd CIS_ScanCan
 
 # Make executable (Linux/macOS/Unix)
 chmod +x cisScanCan.py
@@ -403,10 +403,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Wiki](https://github.com/yourusername/cis-scanner/wiki)
-- **Community**: [Discussions](https://github.com/yourusername/cis-scanner/discussions)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/cis-scanner/issues)
-- **Security**: security@yourproject.com
+- **Community**: [Discussions](https://github.com/nightstalker/CIS_ScanCan/discussions)
+- **Issues**: [GitHub Issues](https://github.com/nightstalker117/CIS_ScanCan/issues)
 
 ---
 
