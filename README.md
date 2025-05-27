@@ -4,8 +4,9 @@
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20Unix-lightgrey)](https://github.com/yourusername/cis-scanner)
 [![CIS Benchmarks](https://img.shields.io/badge/CIS-Benchmarks%20Compliant-green)](https://www.cisecurity.org/cis-benchmarks/)
+[![HTML Reports](https://img.shields.io/badge/Reports-HTML%20%7C%20JSON%20%7C%20TXT-blue)](https://github.com/yourusername/cis-scanner)
 
-> **Universal CIS Benchmark Compliance Scanner** - A comprehensive security compliance checker supporting Windows, Linux, macOS, and Unix systems with dynamic module selection and professional reporting.
+> **Universal CIS Benchmark Compliance Scanner** - A comprehensive security compliance checker supporting Windows, Linux, macOS, and Unix systems with dynamic module selection, interactive HTML dashboards, and professional reporting.
 
 ```
   ██████╗██╗███████╗    ███████╗ ██████╗ ██████╗ ███╗   ██╗ ██████╗ ██████╗ ███╗   ██╗
@@ -24,17 +25,39 @@
 - **Cross-Platform Support** for Windows, Linux, macOS, and Unix systems
 - **Dynamic Module Selection** - Choose specific security domains to assess
 
-### 🎯 **Smart Detection & Reporting**
+### 📊 **Professional Reporting & Visualization**
+- **Interactive HTML Dashboards** with Chart.js visualizations
+- **Compliance Analytics** with pie charts and bar graphs
+- **Multiple Report Formats** (HTML, JSON, TXT)
+- **Mobile-Responsive Design** for viewing on any device
+- **Print-Ready Reports** for documentation and compliance
+
+### 🎯 **Smart Detection & Analysis**
 - **Automatic OS Detection** with distribution identification
 - **Intelligent Module Loading** based on system compatibility
-- **Multiple Report Formats** (JSON, TXT, HTML planned)
-- **Compliance Scoring** with detailed remediation guidance
+- **Real-Time Compliance Scoring** with visual indicators
+- **Detailed Remediation Guidance** with actionable recommendations
 
 ### 🚀 **Enterprise-Ready**
 - **Privilege Detection** (Administrator/Root checking)
 - **Configuration Management** with file-based settings
 - **Comprehensive Error Handling** with detailed logging
 - **Automation Support** for CI/CD pipelines
+- **Scalable Architecture** for large-scale deployments
+
+## 📸 Screenshots
+
+### HTML Dashboard Overview
+![HTML Dashboard](docs/images/html-dashboard.png)
+*Interactive HTML report with compliance analytics and visual charts*
+
+### Module Details View
+![Module Details](docs/images/module-details.png) 
+*Expandable module sections with detailed security check results*
+
+### Compliance Analytics
+![Compliance Charts](docs/images/compliance-charts.png)
+*Professional charts showing compliance trends and module performance*
 
 ## 📋 Supported Operating Systems
 
@@ -51,8 +74,8 @@
 
 ```bash
 # Clone the repository
-https://github.com/nightstalker117/CIS_ScanCan.git
-cd CIS_ScanCan
+git clone https://github.com/yourusername/cis-scanner.git
+cd cis-scanner
 
 # Make executable (Linux/macOS/Unix)
 chmod +x cisScanCan.py
@@ -88,43 +111,96 @@ python cisScanCan.py --modules "1.1,9.1" --format txt
 # Discover available security modules
 python cisScanCan.py --list
 
-# Quick 5-minute security assessment
-python cisScanCan.py --recommended --timeout 300
+# Quick 5-minute security assessment with HTML dashboard
+python cisScanCan.py --recommended --timeout 300 --format html --output quick_assessment.html
 
-# Full comprehensive security audit
-python cisScanCan.py --all --verbose --output full_audit.json
+# Full comprehensive security audit with interactive report
+python cisScanCan.py --all --verbose --format html --output full_audit.html
+
+# Generate multiple report formats simultaneously
+python cisScanCan.py --recommended --format json --output report.json
+python cisScanCan.py --recommended --format html --output report.html
+python cisScanCan.py --recommended --format txt --output report.txt
+```
+
+### 📊 **Interactive HTML Reports**
+
+```bash
+# Professional HTML dashboard with charts
+python cisScanCan.py --all --format html --output compliance_dashboard.html
+
+# Quick executive summary report
+python cisScanCan.py --recommended --format html --output executive_summary.html
+
+# Module-specific detailed analysis
+python cisScanCan.py --modules "1.1,5.2,9.1" --format html --output security_focus.html
+
+# Mobile-responsive report for field teams
+python cisScanCan.py --recommended --format html --output mobile_report.html
 ```
 
 ### 🎛️ **Advanced Configuration**
 
 ```bash
-# Use custom module configuration
-python cisScanCan.py --config custom_modules.ini
+# Use custom module configuration with HTML output
+python cisScanCan.py --config custom_modules.ini --format html --output custom_report.html
 
-# Enterprise deployment with logging
-python cisScanCan.py --all --verbose --output compliance_$(date +%Y%m%d).json
+# Enterprise deployment with comprehensive logging and HTML dashboard
+python cisScanCan.py --all --verbose --format html --output "compliance_$(date +%Y%m%d).html"
 
-# Focus on specific security domains
-python cisScanCan.py --modules "1.1,3.1,5.2,9.1" --format txt
+# Focus on specific security domains with visual analysis
+python cisScanCan.py --modules "1.1,3.1,5.2,9.1" --format html --output domain_analysis.html
 ```
 
 ### 🔧 **Integration Examples**
 
 ```bash
-# CI/CD Pipeline Integration
+# CI/CD Pipeline Integration with HTML reports
 python cisScanCan.py --recommended --format json | jq '.scan_summary.compliance_percentage'
+python cisScanCan.py --recommended --format html --output "ci_report_${BUILD_NUMBER}.html"
 
-# Scheduled Compliance Monitoring
-python cisScanCan.py --all --output "reports/compliance_$(hostname)_$(date +%Y%m%d).json"
+# Scheduled Compliance Monitoring with dashboards
+python cisScanCan.py --all --format html --output "reports/compliance_$(hostname)_$(date +%Y%m%d).html"
+python cisScanCan.py --all --format json --output "reports/compliance_$(hostname)_$(date +%Y%m%d).json"
 
-# Multi-system Assessment
+# Multi-system Assessment with HTML summaries
 for server in $(cat servers.txt); do
-    ssh $server "python cisScanCan.py --recommended" > "${server}_compliance.txt"
+    ssh $server "python cisScanCan.py --recommended --format html" > "${server}_compliance.html"
+    ssh $server "python cisScanCan.py --recommended --format txt" > "${server}_compliance.txt"
 done
+
+# Executive Dashboard Generation
+python cisScanCan.py --recommended --format html --output "executive_dashboard_$(date +%Y%m%d).html"
+
+# Security Team Daily Reports
+python cisScanCan.py --modules "1.1,5.2,9.1" --format html --output "daily_security_$(date +%Y%m%d).html"
 ```
+
+## 📊 Report Formats
+
+### 🌐 **HTML Reports (New!)**
+- **Interactive Dashboards** with Chart.js visualizations
+- **Compliance Analytics** with pie charts and bar graphs  
+- **Responsive Design** that works on desktop and mobile
+- **Expandable Sections** for detailed drill-down analysis
+- **Professional Styling** suitable for executive presentations
+- **Print-Ready Layout** for documentation and audits
+
+### 📄 **JSON Reports**
+- **Machine-Readable** format for automation and integration
+- **Complete Data Structure** with all scan results and metadata
+- **API-Friendly** for consumption by other security tools
+- **Structured Output** perfect for data analysis and trending
+
+### 📝 **Text Reports**
+- **Human-Readable** format for command-line viewing
+- **Concise Summaries** with actionable recommendations
+- **Console-Friendly** output for SSH sessions and terminals
+- **Log-Suitable** format for syslog integration
 
 ## 📊 Sample Output
 
+### Command Line Summary
 ```
 🖥️  Detected Operating System: Linux (Ubuntu 22.04)
 🏗️  Architecture: x86_64
@@ -150,6 +226,42 @@ Execution Time: 12.34 seconds
 • 4 security configurations failed compliance checks
 • Review failed checks and implement recommended security settings
 • 1 checks require manual verification
+```
+
+### HTML Dashboard Features
+The interactive HTML reports include:
+
+- **📊 Compliance Overview Chart**: Visual pie chart showing pass/fail ratios
+- **📈 Module Performance Graphs**: Bar charts comparing security modules  
+- **🎯 Interactive Elements**: Expandable sections and hover effects
+- **📱 Mobile Responsive**: Perfect viewing on any device
+- **🖨️ Print-Ready**: Professional layout for documentation
+- **⚡ Real-Time Data**: Dynamic loading with smooth animations
+
+### JSON Output Structure
+```json
+{
+  "scan_summary": {
+    "compliance_percentage": 87.5,
+    "total_checks": 48,
+    "passed_checks": 42,
+    "failed_checks": 4,
+    "os_info": {
+      "system": "linux",
+      "distribution": "ubuntu",
+      "version": "22.04"
+    }
+  },
+  "detailed_results": {
+    "1.1": {
+      "1.1.1_cramfs_disabled": {
+        "status": "PASS",
+        "description": "Ensure cramfs filesystem is disabled",
+        "reason": "Module not loaded"
+      }
+    }
+  }
+}
 ```
 
 ## 🏗️ Architecture
@@ -255,7 +367,7 @@ python cisScanCan.py --recommended --force-continue
 
 ```yaml
 name: Security Compliance Scan
-on: [push, pull_request]
+on: [push, pull_request, schedule]
 
 jobs:
   security-scan:
@@ -269,11 +381,27 @@ jobs:
       - name: Run CIS Scanner
         run: |
           python cisScanCan.py --recommended --format json > compliance_report.json
-      - name: Upload Results
+          python cisScanCan.py --recommended --format html > compliance_dashboard.html
+      - name: Upload HTML Dashboard
+        uses: actions/upload-artifact@v3
+        with:
+          name: compliance-dashboard
+          path: compliance_dashboard.html
+      - name: Upload JSON Results
         uses: actions/upload-artifact@v3
         with:
           name: compliance-report
           path: compliance_report.json
+      - name: Check Compliance Threshold
+        run: |
+          COMPLIANCE=$(python cisScanCan.py --recommended --format json | jq -r '.scan_summary.compliance_percentage')
+          echo "Compliance: $COMPLIANCE%"
+          if (( $(echo "$COMPLIANCE < 85" | bc -l) )); then
+            echo "❌ Compliance below threshold: $COMPLIANCE%"
+            exit 1
+          else
+            echo "✅ Compliance meets threshold: $COMPLIANCE%"
+          fi
 ```
 
 ### Jenkins Pipeline
@@ -281,23 +409,105 @@ jobs:
 ```groovy
 pipeline {
     agent any
+    
+    triggers {
+        cron('H 2 * * *') // Daily at 2 AM
+    }
+    
     stages {
-        stage('Security Compliance') {
+        stage('Security Compliance Scan') {
             steps {
                 script {
-                    sh 'python cisScanCan.py --all --output compliance_${BUILD_NUMBER}.json'
-                    archiveArtifacts artifacts: 'compliance_*.json'
+                    // Generate multiple report formats
+                    sh """
+                        python cisScanCan.py --all --format json --output compliance_${BUILD_NUMBER}.json
+                        python cisScanCan.py --all --format html --output compliance_${BUILD_NUMBER}.html
+                        python cisScanCan.py --all --format txt --output compliance_${BUILD_NUMBER}.txt
+                    """
                     
+                    // Archive all report formats
+                    archiveArtifacts artifacts: 'compliance_*.json,compliance_*.html,compliance_*.txt'
+                    
+                    // Check compliance threshold
                     def compliance = sh(
                         script: 'python cisScanCan.py --recommended --format json | jq -r .scan_summary.compliance_percentage',
                         returnStdout: true
                     ).trim()
                     
-                    if (compliance.toFloat() < 80) {
-                        error("Compliance score ${compliance}% below threshold")
+                    echo "Current compliance level: ${compliance}%"
+                    
+                    // Set build status based on compliance
+                    if (compliance.toFloat() < 70) {
+                        currentBuild.result = 'FAILURE'
+                        error("❌ Critical compliance failure: ${compliance}% (threshold: 70%)")
+                    } else if (compliance.toFloat() < 85) {
+                        currentBuild.result = 'UNSTABLE'
+                        echo "⚠️ Compliance below recommended level: ${compliance}% (recommended: 85%)"
+                    } else {
+                        echo "✅ Excellent compliance: ${compliance}%"
                     }
                 }
             }
+        }
+        
+        stage('Publish HTML Report') {
+            steps {
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: '.',
+                    reportFiles: "compliance_${BUILD_NUMBER}.html",
+                    reportName: 'CIS Compliance Dashboard',
+                    reportTitles: 'Security Compliance Report'
+                ])
+            }
+        }
+        
+        stage('Notify Teams') {
+            when {
+                anyOf {
+                    currentBuild.result == 'FAILURE'
+                    currentBuild.result == 'UNSTABLE'
+                }
+            }
+            steps {
+                script {
+                    def compliance = sh(
+                        script: 'python cisScanCan.py --recommended --format json | jq -r .scan_summary.compliance_percentage',
+                        returnStdout: true
+                    ).trim()
+                    
+                    // Send Slack notification (example)
+                    slackSend(
+                        channel: '#security',
+                        color: currentBuild.result == 'FAILURE' ? 'danger' : 'warning',
+                        message: """
+                            🛡️ CIS Compliance Alert
+                            
+                            Server: ${env.NODE_NAME}
+                            Compliance Level: ${compliance}%
+                            Status: ${currentBuild.result}
+                            
+                            📊 Dashboard: ${BUILD_URL}CIS_Compliance_Dashboard/
+                            📄 Full Report: ${BUILD_URL}artifact/compliance_${BUILD_NUMBER}.html
+                        """
+                    )
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            // Clean up workspace but keep reports
+            sh 'find . -name "*.log" -delete'
+        }
+        success {
+            echo '✅ Compliance scan completed successfully'
+        }
+        failure {
+            echo '❌ Compliance scan failed - immediate attention required'
         }
     }
 }
@@ -353,8 +563,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/nightstalker117/CIS_ScanCan.git
-cd CIS_ScanCan
+git clone https://github.com/yourusername/cis-scanner.git
+cd cis-scanner
 
 # Create development branch
 git checkout -b feature/new-security-module
@@ -367,28 +577,44 @@ python cisScanCan.py --recommended --verbose
 
 ### Reporting Issues
 
+- **Security Issues**: Please report privately to security@yourproject.com
 - **Bug Reports**: Use GitHub Issues with detailed reproduction steps
 - **Feature Requests**: Use GitHub Issues with clear use case description
 
-## 🗺️ Roadmap
+### 🗺️ Roadmap
 
-### Upcoming Features
+### Recently Added ✅
+- **Interactive HTML Reports** with Chart.js visualizations
+- **Mobile-Responsive Dashboards** for field team access
+- **Advanced CSS3 Styling** with animations and hover effects  
+- **Expandable Module Sections** for detailed drill-down
+- **Professional Print Layouts** for compliance documentation
 
-- [ ] **HTML Report Generation** with visual dashboards
-- [ ] **REST API Interface** for integration
-- [ ] **Database Integration** for historical tracking
-- [ ] **Custom Rule Engine** for organization-specific checks
-- [ ] **Cloud Platform Support** (AWS, Azure, GCP)
-- [ ] **Container Security** scanning (Docker, Kubernetes)
-- [ ] **Network Device Support** (Cisco, Juniper)
-- [ ] **Mobile Device Management** integration
+### Upcoming Features 🚧
+
+- [ ] **REST API Interface** for integration with security platforms
+- [ ] **Database Integration** for historical trend analysis
+- [ ] **Custom Rule Engine** for organization-specific compliance checks
+- [ ] **Email Report Distribution** with scheduled delivery
+- [ ] **Multi-Language Support** for international deployments
+- [ ] **Cloud Platform Support** (AWS, Azure, GCP security assessments)
+- [ ] **Container Security** scanning (Docker, Kubernetes CIS benchmarks)
+- [ ] **Network Device Support** (Cisco, Juniper, Palo Alto)
+- [ ] **Mobile Device Management** integration (MDM compliance)
+- [ ] **Advanced Analytics** with machine learning insights
+
+### Long-Term Vision 🔮
+- [ ] **SaaS Platform** with centralized compliance management
+- [ ] **AI-Powered Recommendations** based on threat intelligence
+- [ ] **Compliance Automation** with auto-remediation capabilities
+- [ ] **Integration Marketplace** with third-party security tools
 
 ### Version History
 
-- **v1.0.0** - Initial release with core OS support
+- **v2.0.0** - ✅ Interactive HTML reports with Chart.js integration
+- **v1.2.0** - Enhanced reporting and configuration management  
 - **v1.1.0** - Added macOS and Unix support
-- **v1.2.0** - Enhanced reporting and configuration management
-- **v2.0.0** - Planned: REST API and web interface
+- **v1.0.0** - Initial release with core OS support
 
 ## 📜 License
 
@@ -402,8 +628,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Community**: [Discussions](https://github.com/nightstalker/CIS_ScanCan/discussions)
-- **Issues**: [GitHub Issues](https://github.com/nightstalker117/CIS_ScanCan/issues)
+- **Documentation**: [Wiki](https://github.com/yourusername/cis-scanner/wiki)
+- **Community**: [Discussions](https://github.com/yourusername/cis-scanner/discussions)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/cis-scanner/issues)
+- **Security**: security@yourproject.com
 
 ---
 
