@@ -353,8 +353,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/cis-scanner.git
-cd cis-scanner
+git clone https://github.com/nightstalker117/CIS_ScanCan.git
+cd CIS_ScanCan
 
 # Create development branch
 git checkout -b feature/new-security-module
@@ -367,7 +367,6 @@ python cisScanCan.py --recommended --verbose
 
 ### Reporting Issues
 
-- **Security Issues**: Please report privately to security@yourproject.com
 - **Bug Reports**: Use GitHub Issues with detailed reproduction steps
 - **Feature Requests**: Use GitHub Issues with clear use case description
 
