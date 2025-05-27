@@ -52,11 +52,11 @@
 *Interactive HTML report with compliance analytics and visual charts*
 
 ### Module Details View
-![Module Details]
+![Module Details](docs/images/module-results.png)
 *Expandable module sections with detailed security check results*
 
 ### Compliance Analytics
-![Compliance Charts]
+![Compliance Charts](docs/images/compliance-analytics.png)
 *Professional charts showing compliance trends and module performance*
 
 ## 📋 Supported Operating Systems
