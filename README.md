@@ -51,7 +51,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cis-scanner.git
+git clone https://github.com/nightstalker117/cis-scanner.git
 cd cis-scanner
 
 # Make executable (Linux/macOS/Unix)
