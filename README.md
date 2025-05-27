@@ -52,11 +52,11 @@
 *Interactive HTML report with compliance analytics and visual charts*
 
 ### Module Details View
-![Module Details](docs/images/module-details.png) 
+![Module Details]
 *Expandable module sections with detailed security check results*
 
 ### Compliance Analytics
-![Compliance Charts](docs/images/compliance-charts.png)
+![Compliance Charts]
 *Professional charts showing compliance trends and module performance*
 
 ## 📋 Supported Operating Systems
@@ -74,8 +74,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cis-scanner.git
-cd cis-scanner
+https://github.com/nightstalker117/CIS_ScanCan.git
+cd CIS_ScanCan
 
 # Make executable (Linux/macOS/Unix)
 chmod +x cisScanCan.py
@@ -178,7 +178,7 @@ python cisScanCan.py --modules "1.1,5.2,9.1" --format html --output "daily_secur
 
 ## 📊 Report Formats
 
-### 🌐 **HTML Reports (New!)**
+### 🌐 **HTML Reports**
 - **Interactive Dashboards** with Chart.js visualizations
 - **Compliance Analytics** with pie charts and bar graphs  
 - **Responsive Design** that works on desktop and mobile
@@ -563,8 +563,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/cis-scanner.git
-cd cis-scanner
+git clone https://github.com/nightstalker117/CIS_ScanCan.git
+cd CIS_ScanCan
 
 # Create development branch
 git checkout -b feature/new-security-module
@@ -577,7 +577,6 @@ python cisScanCan.py --recommended --verbose
 
 ### Reporting Issues
 
-- **Security Issues**: Please report privately to security@yourproject.com
 - **Bug Reports**: Use GitHub Issues with detailed reproduction steps
 - **Feature Requests**: Use GitHub Issues with clear use case description
 
@@ -628,13 +627,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Wiki](https://github.com/yourusername/cis-scanner/wiki)
-- **Community**: [Discussions](https://github.com/yourusername/cis-scanner/discussions)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/cis-scanner/issues)
-- **Security**: security@yourproject.com
+- **Documentation**: [Wiki](https://github.com/nightstalker117/CIS_ScanCan/wiki)
+- **Community**: [Discussions](https://github.com/nightstalker117/CIS_ScanCan/discussions)
+- **Issues**: [GitHub Issues](https://github.com/nightstalker117/CIS_ScanCan/issues)
 
 ---
 
 **⭐ If this project helps you improve your security posture, please give it a star!**
 
-Made with ❤️ by the Security Community
+Made with ❤️
